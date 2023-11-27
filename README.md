@@ -19,9 +19,9 @@ R1(config-if)#ip address 1.1.1.1 255.255.255.255 (loopback interface IP address 
 R1(config-if)#router ospf 1 (OSPF process ID doesn't need to match between routers) <br />
 R1(config-router)#net 0.0.0.0 255.255.255.255 area 0 (OSPF "0.0.0.0 255.255.255.255" includes all addresses) <br />
 R1(config-router)#passive-interface l0 (prevents interface from needlessly sending OSPF messages) <br />
-Router(config-router)#default-information originate (configures R1 as autonomous system boundary router) <br />
-Router(config-router)#exit <br />
-Router(config)#ip route 0.0.0.0 0.0.0.0 203.0.113.2 (default route to ISP) <br />
+R1(config-router)#default-information originate (configures R1 as autonomous system boundary router) <br />
+R1(config-router)#exit <br />
+R1(config)#ip route 0.0.0.0 0.0.0.0 203.0.113.2 (default route to ISP) <br />
 <br />
 <br />
 Configurations on R2 for loopback interface and OSPF area 0 including exact IPv4 address connected subnetworks. <br />
