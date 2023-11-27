@@ -16,6 +16,7 @@ Confgiure OSPF on R1, R2, R3 & R4.
 Configurations on R1 for loopback interface, OSPF area 0 including all IPv4 addresses. Configure R1 as area border router. <br />
 R1(config)#int l0 <br />
 R1(config-if)#ip address 1.1.1.1 255.255.255.255 (loopback interface IP address will always be OSPF device identifier from other routers routing tables) <br />
+- Alternatively, to enable OSPF on selected interfaces run 'ip ospf 1 area 0' from interface config mode.
 R1(config-if)#router ospf 1 (OSPF process ID doesn't need to match between routers) <br />
 R1(config-router)#net 0.0.0.0 255.255.255.255 area 0 (OSPF "0.0.0.0 255.255.255.255" includes all addresses) <br />
 R1(config-router)#passive-interface l0 (prevents interface from needlessly sending OSPF messages) <br />
@@ -42,3 +43,7 @@ R3(config-if)#router ospf 1 <br />
 R3(config-router)#net 10.0.0.0 0.0.255.255 area 0 (enables interfaces within subnetwork range) <br />
 R3(config-router)#passive-interface l0 <br />
 <img src="https://i.imgur.com/qd1Ohel.png" height="80%" width="80%" />
+Experimenting with 'auto-cost reference-bandwidth' changes OSPF priority path. <br />
+Router(config-router)#auto-cost reference-bandwidth 10000 <br />
+Verify results with tracert <br />
+<img src="https://i.imgur.com/76NtxBq.png" height="80%" width="80%" />
