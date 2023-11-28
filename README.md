@@ -1,7 +1,7 @@
 # OSPF Configurations
 
 <h2>Description</h2>
-Confgiure OSPF on R1, R2, R3 & R4.
+Confgiure OSPF on R1, R2, R3 & R4. Verify results with commands 'show ip route', 'show ip ospf int' and 'tracert'.
 
 <h2>Environments Used </h2>
 
@@ -43,6 +43,8 @@ R3(config-if)#router ospf 1 <br />
 R3(config-router)#net 10.0.0.0 0.0.255.255 area 0 (enables interfaces within subnetwork range) <br />
 R3(config-router)#passive-interface l0 <br />
 <img src="https://i.imgur.com/qd1Ohel.png" height="80%" width="80%" /> <br />
+<br />
+<br />
 Experimenting with 'auto-cost reference-bandwidth' changes OSPF priority path. <br />
 Router(config-router)#auto-cost reference-bandwidth 10000 <br />
 Verify results with tracert <br />
