@@ -1,7 +1,7 @@
 # OSPF Configurations
 
 <h2>Description</h2>
-Confgure OSPF on R1, R2, R3 & R4 with 4 separate methods. Verify results with commands 'show ip route', 'show ip ospf int' and 'tracert'.
+Configure OSPF on R1, R2, R3 & R4 with 4 separate methods. Verify results with commands 'show ip route', 'show ip ospf int' and 'tracert'.
 
 <h2>Environments Used </h2>
 
